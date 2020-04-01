@@ -22,7 +22,15 @@ namespace SacramentPlanner.Controllers
         // GET: Meetings
         public async Task<IActionResult> Index()
         {
-            var sacramentPlannerContext = _context.Meeting.Include(m => m.BenedictionDirectory).Include(m => m.Closing_HymnHymn).Include(m => m.ConductingDirectory).Include(m => m.InvocationDirectory).Include(m => m.Opening_HymnHymn).Include(m => m.PresidingDirectory).Include(m => m.Sacrament_HymnHymn).Include(m => m.Ward);
+            var sacramentPlannerContext = _context.Meeting
+                .Include(m => m.BenedictionDirectory)
+                .Include(m => m.Closing_HymnHymn)
+                .Include(m => m.ConductingDirectory)
+                .Include(m => m.InvocationDirectory)
+                .Include(m => m.Opening_HymnHymn)
+                .Include(m => m.PresidingDirectory)
+                .Include(m => m.Sacrament_HymnHymn)
+                .Include(m => m.Ward);
             return View(await sacramentPlannerContext.ToListAsync());
         }
 

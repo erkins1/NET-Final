@@ -22,9 +22,7 @@ namespace SacramentPlanner.Models
         [Required] 
         public int Opening_Hymn { get; set; }
         public int Invocation { get; set; }
-        [Required] 
         public bool Ward_Business { get; set; }
-        [Required] 
         public bool Sacrament { get; set; }
         [Required] 
         public int Sacrament_Hymn { get; set; }
@@ -33,16 +31,16 @@ namespace SacramentPlanner.Models
         public int Benediction { get; set; }
 
 
-        [Required, ForeignKey("WardID")]
+        [ForeignKey("WardID")]
         public Ward Ward { get; set; }
 
-        [Required, ForeignKey("Presiding")]
+        [ForeignKey("Presiding")]
         public Directory PresidingDirectory { get; set; }
 
-        [Required, ForeignKey("Conducting")]
+        [ForeignKey("Conducting")]
         public Directory ConductingDirectory { get; set; }
 
-        [Required, ForeignKey("Opening_Hymn")]
+        [ForeignKey("Opening_Hymn")]
         public Hymn Opening_HymnHymn { get; set; }
 
         [ForeignKey("Invocation")]
@@ -51,7 +49,7 @@ namespace SacramentPlanner.Models
         [ForeignKey("Sacrament_Hymn")]
         public Hymn Sacrament_HymnHymn { get; set; }
 
-        [Required, ForeignKey("Closing_Hymn")]
+        [ForeignKey("Closing_Hymn")]
         public Hymn Closing_HymnHymn { get; set; }
 
         [ForeignKey("Benediction")]
