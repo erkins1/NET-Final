@@ -47,10 +47,12 @@
                             new { @class = "form-control" })
             </div>
             *@
-            <select asp-for="Sex" asp-items="Html.GetEnumSelectList<Gender>()">
+            <p>Gender: </p>
+            <select class="form-control" asp-for="Sex" asp-items="Html.GetEnumSelectList<Gender>()">
                 <option selected="selected" value="">Please select</option>
             </select>
-            <select asp-for="Calling" asp-items="Html.GetEnumSelectList<Title>()">
+            <p>Calling: </p>
+            <select class="form-control" asp-for="Calling" asp-items="Html.GetEnumSelectList<Title>()">
                 <option selected="selected" value="">Please select</option>
             </select>
             <div class="form-group">
