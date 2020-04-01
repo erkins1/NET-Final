@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SacramentPlanner.Models
 {
@@ -24,6 +25,10 @@ namespace SacramentPlanner.Models
         public int Age { get; set; }
 
         [Required]
+        public Gender Sex { get; set; }
+
+        public Title Calling { get; set; }
+
         public enum Gender
         {
             Male,

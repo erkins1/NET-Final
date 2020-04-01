@@ -29,25 +29,25 @@ namespace SacramentPlanner.Models
         public Ward Ward { get; set; }
 
         [Required, ForeignKey("Presiding")]
-        public Directory Directory { get; set; }
+        public Directory PresidingDirectory { get; set; }
 
         [Required, ForeignKey("Conducting")]
-        public Directory Directory { get; set; }
+        public Directory ConductingDirectory { get; set; }
 
         [Required, ForeignKey("Opening_Hymn")]
-        public Hymn Hymn { get; set; }
+        public Hymn Opening_HymnHymn { get; set; }
 
         [ForeignKey("Invocation")]
-        public Directory Directory { get; set; }
+        public Directory InvocationDirectory { get; set; }
 
         [ForeignKey("Sacrament_Hymn")]
-        public Hymn Hymn { get; set; }
+        public Hymn Sacrament_HymnHymn { get; set; }
 
         [Required, ForeignKey("Closing_Hymn")]
-        public Hymn Hymn { get; set; }
+        public Hymn Closing_HymnHymn { get; set; }
 
         [ForeignKey("Benediction")]
-        public Directory Directory { get; set; }
+        public Directory BenedictionDirectory { get; set; }
 
 
 
