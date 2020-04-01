@@ -1,0 +1,75 @@
+﻿@model SacramentPlanner.Models.Meeting
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Meeting</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WardID" class="control-label"></label>
+                <select asp-for="WardID" class ="form-control" asp-items="ViewBag.WardID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presiding" class="control-label"></label>
+                <select asp-for="Presiding" class ="form-control" asp-items="ViewBag.Presiding"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Conducting" class="control-label"></label>
+                <select asp-for="Conducting" class ="form-control" asp-items="ViewBag.Conducting"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opening_Hymn" class="control-label"></label>
+                <select asp-for="Opening_Hymn" class ="form-control" asp-items="ViewBag.Opening_Hymn"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Invocation" class="control-label"></label>
+                <select asp-for="Invocation" class ="form-control" asp-items="ViewBag.Invocation"></select>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ward_Business" /> @Html.DisplayNameFor(model => model.Ward_Business)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Sacrament" /> @Html.DisplayNameFor(model => model.Sacrament)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sacrament_Hymn" class="control-label"></label>
+                <select asp-for="Sacrament_Hymn" class ="form-control" asp-items="ViewBag.Sacrament_Hymn"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Closing_Hymn" class="control-label"></label>
+                <select asp-for="Closing_Hymn" class ="form-control" asp-items="ViewBag.Closing_Hymn"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Benediction" class="control-label"></label>
+                <select asp-for="Benediction" class ="form-control" asp-items="ViewBag.Benediction"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
