@@ -36,11 +36,36 @@ namespace SacramentPlanner.Models
                         });
                 }
 
+                //Add fake Wards
+                context.Ward.AddRange(
+                    new Ward
+                    {
+                        Ward_Name = "Salt Lake 106th",
+                        Stake = "Utah 17th"
+                    },
+                    new Ward
+                    {
+                        Ward_Name = "Salt Lake 253rd",
+                        Stake = "Utah 17th"
+                    },
+                    new Ward
+                    {
+                        Ward_Name = "Salt Lake 98th",
+                        Stake = "Utah 17th"
+                    }
+                    );
+
+
                 //Add fake Members
                 context.Directory.AddRange(
                     new Directory
                     {
-
+                        WardID = 1,
+                        First_Name = "Joseph",
+                        Last_Name = "Smith",
+                        Age = 38,
+                        Sex = "Male",
+                        Calling = StakePresident
                     }
 
                     );
