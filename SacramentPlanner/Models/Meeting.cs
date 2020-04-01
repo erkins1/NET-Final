@@ -13,7 +13,7 @@ namespace SacramentPlanner.Models
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
-        public int WardId { get; set; }
+        public int WardID { get; set; }
         public int Presiding { get; set; }
         public int Conducting { get; set; }
         public int Opening_Hymn { get; set; }
