@@ -10,17 +10,18 @@ namespace SacramentPlanner.Models
     public class Agenda
     {
         public int AgendaID { get; set; }
+        [Required] 
         public Category Section { get; set; }
-        public int Member { get; set; }
+        public int MemberID { get; set; }
         public int HymnID { get; set; }
         public string Special_Event_Text { get; set; }
         public string Notes { get; set; }
         public string Subject { get; set; }
 
-        [ForeignKey("Member")]
+        [ForeignKey("MemberID")]
         public Directory Directory { get; set; }
 
-        [ForeignKey("Hymn")]
+        [ForeignKey("HymnID")]
         public Hymn Hymn { get; set; }
 
 

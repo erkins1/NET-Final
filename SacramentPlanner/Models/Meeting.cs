@@ -13,14 +13,22 @@ namespace SacramentPlanner.Models
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
+        [Required]
         public int WardID { get; set; }
+        [Required]
         public int Presiding { get; set; }
+        [Required] 
         public int Conducting { get; set; }
+        [Required] 
         public int Opening_Hymn { get; set; }
         public int Invocation { get; set; }
+        [Required] 
         public bool Ward_Business { get; set; }
+        [Required] 
         public bool Sacrament { get; set; }
+        [Required] 
         public int Sacrament_Hymn { get; set; }
+        [Required] 
         public int Closing_Hymn { get; set; }
         public int Benediction { get; set; }
 

@@ -64,13 +64,54 @@ namespace SacramentPlanner.Models
                         First_Name = "Joseph",
                         Last_Name = "Smith",
                         Age = 38,
-                        Sex = "Male",
-                        Calling = StakePresident
+                        Sex = Directory.Gender.Male,
+                        Calling = Directory.Title.Bishop
+                    },
+                    new Directory
+                    {
+                        WardID = 1,
+                        First_Name = "Emma",
+                        Last_Name = "Smith",
+                        Age = 58,
+                        Sex = Directory.Gender.Female,
+                    },
+                    new Directory
+                    {
+                        WardID = 2,
+                        First_Name = "Brigham",
+                        Last_Name = "Young",
+                        Age = 63,
+                        Sex = Directory.Gender.Male,
+                        Calling = Directory.Title.WardFirstCouncellor
+                    },
+                    new Directory
+                    {
+                        WardID = 1,
+                        First_Name = "Russell",
+                        Last_Name = "Nelson",
+                        Age = 88,
+                        Sex = Directory.Gender.Male,
+                        Calling = Directory.Title.StakePresident
+                    },
+                    new Directory
+                    {
+                        WardID = 1,
+                        First_Name = "Dallin",
+                        Last_Name = "Oaks",
+                        Age = 90,
+                        Sex = Directory.Gender.Male,
+                        Calling = Directory.Title.StakeFirstCouncellor
+                    },
+                    new Directory
+                    {
+                        WardID = 2,
+                        First_Name = "Jean",
+                        Last_Name = "Bingham",
+                        Age = 54,
+                        Sex = Directory.Gender.Female,
                     }
 
                     );
-
-                //Add fake Wards
 
 
                 context.SaveChanges();
