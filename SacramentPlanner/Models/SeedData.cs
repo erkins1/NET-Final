@@ -24,17 +24,19 @@ namespace SacramentPlanner.Models
                     return;   // DB has been seeded
                 }
 
-                string[] file = File.ReadLines(@"rushOrderPrices.txt").ToArray();
+                string[] file = File.ReadLines("Resources\\Hymns.txt").ToArray();
 
                 for (int i = 0; i < file.Length; i++)
                 {
                     context.Hymn.AddRange(
                         new Hymn
                         {
-                            HymnID = i+1,
+                            Hymn_Number = i+1,
                             Hymn_Name = file[i]
                         });
                 }
+
+                context.SaveChanges();
 
                 //Add fake Wards
                 context.Ward.AddRange(
@@ -52,9 +54,9 @@ namespace SacramentPlanner.Models
                     {
                         Ward_Name = "Salt Lake 98th",
                         Stake = "Utah 17th"
-                    }
-                    );
+                    });
 
+                context.SaveChanges();
 
                 //Add fake Members
                 context.Directory.AddRange(
@@ -109,10 +111,7 @@ namespace SacramentPlanner.Models
                         Last_Name = "Bingham",
                         Age = 54,
                         Sex = Directory.Gender.Female,
-                    }
-
-                    );
-
+                    });
 
                 context.SaveChanges();
             }

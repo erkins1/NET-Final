@@ -9,7 +9,7 @@ namespace SacramentPlanner.Models
     public class Hymn
     {
         public int HymnID { get; set; }
-
+        public int Hymn_Number { get; set; }
         public string Hymn_Name { get; set; }
 
 
