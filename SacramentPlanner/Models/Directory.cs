@@ -31,26 +31,24 @@ namespace SacramentPlanner.Models
 
         public Title Calling { get; set; }
 
-        public enum Gender
-        {
-            Male,
-            Female
-        }
-
-        public enum Title
-        {
-            [Display(Name = "Stake President")]
-            StakePresident,
-            Bishop,
-            [Display(Name = "Stake First Councellor")]
-            StakeFirstCouncellor,
-            [Display(Name = "Stake Second Councellor")]
-            StakeSecondCouncellor,
-            [Display(Name = "Ward First Councellor")]
-            WardFirstCouncellor,
-            [Display(Name = "Ward Second Councellor")]
-            WardSecondCouncellor
-        }
-
+    }
+    public enum Gender
+    {
+        Male,
+        Female
+    }
+    public enum Title
+    {
+        [Display(Name = "Stake President")]
+        StakePresident,
+        Bishop,
+        [Display(Name = "Stake First Councellor")]
+        StakeFirstCouncellor,
+        [Display(Name = "Stake Second Councellor")]
+        StakeSecondCouncellor,
+        [Display(Name = "Ward First Councellor")]
+        WardFirstCouncellor,
+        [Display(Name = "Ward Second Councellor")]
+        WardSecondCouncellor
     }
 }
