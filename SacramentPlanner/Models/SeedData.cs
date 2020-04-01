@@ -66,8 +66,8 @@ namespace SacramentPlanner.Models
                         First_Name = "Joseph",
                         Last_Name = "Smith",
                         Age = 38,
-                        Sex = Directory.Gender.Male,
-                        Calling = Directory.Title.Bishop
+                        Sex = Gender.Male,
+                        Calling = Title.Bishop
                     },
                     new Directory
                     {
@@ -75,7 +75,7 @@ namespace SacramentPlanner.Models
                         First_Name = "Emma",
                         Last_Name = "Smith",
                         Age = 58,
-                        Sex = Directory.Gender.Female,
+                        Sex = Gender.Female,
                     },
                     new Directory
                     {
@@ -83,8 +83,8 @@ namespace SacramentPlanner.Models
                         First_Name = "Brigham",
                         Last_Name = "Young",
                         Age = 63,
-                        Sex = Directory.Gender.Male,
-                        Calling = Directory.Title.WardFirstCouncellor
+                        Sex = Gender.Male,
+                        Calling = Title.WardFirstCouncellor
                     },
                     new Directory
                     {
@@ -92,8 +92,8 @@ namespace SacramentPlanner.Models
                         First_Name = "Russell",
                         Last_Name = "Nelson",
                         Age = 88,
-                        Sex = Directory.Gender.Male,
-                        Calling = Directory.Title.StakePresident
+                        Sex = Gender.Male,
+                        Calling = Title.StakePresident
                     },
                     new Directory
                     {
@@ -101,8 +101,8 @@ namespace SacramentPlanner.Models
                         First_Name = "Dallin",
                         Last_Name = "Oaks",
                         Age = 90,
-                        Sex = Directory.Gender.Male,
-                        Calling = Directory.Title.StakeFirstCouncellor
+                        Sex = Gender.Male,
+                        Calling = Title.StakeFirstCouncellor
                     },
                     new Directory
                     {
@@ -110,7 +110,7 @@ namespace SacramentPlanner.Models
                         First_Name = "Jean",
                         Last_Name = "Bingham",
                         Age = 54,
-                        Sex = Directory.Gender.Female,
+                        Sex = Gender.Female,
                     });
 
                 context.SaveChanges();
