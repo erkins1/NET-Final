@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
+namespace SacramentPlanner.Models
+{
+    public class Directory
+    {
+        public int DirectoryID { get; set; }
+
+        public int WardID { get; set; }
+        [ForeignKey("WardID")]
+        public Ward Ward { get; set; }
+
+        [Required]
+        public string First_Name { get; set; }
+
+        [Required]
+        public string Last_Name { get; set; }
+
+        [Required]
+        public int Age { get; set; }
+
+        [Required]
+        public enum Gender
+        {
+            Male,
+            Female
+        }
+
+        public enum Title
+        {
+            [Display(Name = "Stake President")]
+            StakePresident,
+            Bishop,
+            [Display(Name = "Stake First Councellor")]
+            StakeFirstCouncellor,
+            [Display(Name = "Stake Second Councellor")]
+            StakeSecondCouncellor,
+            [Display(Name = "Ward First Councellor")]
+            WardFirstCouncellor,
+            [Display(Name = "Ward Second Councellor")]
+            WardSecondCouncellor
+        }
+
+    }
+}
