@@ -19,14 +19,18 @@ namespace SacramentPlanner.Models
         public int Presiding { get; set; }
         [Required] 
         public int Conducting { get; set; }
-        [Required] 
+        [Required]
+        [Display(Name = "Opening Hymn")]
         public int Opening_Hymn { get; set; }
         public int Invocation { get; set; }
+        [Display(Name = "Ward Business")]
         public bool Ward_Business { get; set; }
         public bool Sacrament { get; set; }
-        [Required] 
+        [Required]
+        [Display(Name = "Sacrament Hymn")]
         public int Sacrament_Hymn { get; set; }
-        [Required] 
+        [Required]
+        [Display(Name = "Closing Hymn")]
         public int Closing_Hymn { get; set; }
         public int Benediction { get; set; }
 
@@ -35,24 +39,31 @@ namespace SacramentPlanner.Models
         public Ward Ward { get; set; }
 
         [ForeignKey("Presiding")]
+        [Display(Name = "Presiding")]
         public Directory PresidingDirectory { get; set; }
 
         [ForeignKey("Conducting")]
+        [Display(Name = "Conducting")]
         public Directory ConductingDirectory { get; set; }
 
         [ForeignKey("Opening_Hymn")]
+        [Display(Name = "Opening Hymn")]
         public Hymn Opening_HymnHymn { get; set; }
 
         [ForeignKey("Invocation")]
+        [Display(Name = "Invocation")]
         public Directory InvocationDirectory { get; set; }
 
         [ForeignKey("Sacrament_Hymn")]
+        [Display(Name = "Sacrament Hymn")]
         public Hymn Sacrament_HymnHymn { get; set; }
 
         [ForeignKey("Closing_Hymn")]
+        [Display(Name = "Closing Hymn")]
         public Hymn Closing_HymnHymn { get; set; }
 
         [ForeignKey("Benediction")]
+        [Display(Name = "Benediction")]
         public Directory BenedictionDirectory { get; set; }
 
 

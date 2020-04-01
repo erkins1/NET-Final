@@ -16,9 +16,11 @@ namespace SacramentPlanner.Models
         public Ward Ward { get; set; }
 
         [Required]
+        [Display(Name = "First Name")]
         public string First_Name { get; set; }
 
         [Required]
+        [Display(Name = "Last Name")]
         public string Last_Name { get; set; }
 
         [Required]
