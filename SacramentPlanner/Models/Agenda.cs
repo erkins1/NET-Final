@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SacramentPlanner.Models
 {
@@ -11,7 +12,7 @@ namespace SacramentPlanner.Models
         public int AgendaID { get; set; }
         public Category Section { get; set; }
         public int Member { get; set; }
-        public int Hymn { get; set; }
+        public int HymnID { get; set; }
         public string Special_Event_Text { get; set; }
         public string Notes { get; set; }
         public string Subject { get; set; }
