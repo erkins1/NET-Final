@@ -48,7 +48,7 @@ namespace SacramentPlanner.Controllers
         // GET: Directories/Create
         public IActionResult Create()
         {
-            ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "WardID");
+            ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "Ward_Name");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace SacramentPlanner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "WardID", directory.WardID);
+            ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "Ward_Name", directory.WardID);
             return View(directory);
         }
 
@@ -82,7 +82,7 @@ namespace SacramentPlanner.Controllers
             {
                 return NotFound();
             }
-            ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "WardID", directory.WardID);
+            ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "Ward_Name", directory.WardID);
             return View(directory);
         }
 
@@ -118,7 +118,7 @@ namespace SacramentPlanner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "WardID", directory.WardID);
+            ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "Ward_Name", directory.WardID);
             return View(directory);
         }
 

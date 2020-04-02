@@ -22,7 +22,9 @@ namespace SacramentPlanner.Models
         [Required]
         [Display(Name = "Opening Hymn")]
         public int Opening_Hymn { get; set; }
-        public int Invocation { get; set; }
+
+        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "By Invitation")]
+        public int? Invocation { get; set; }
         [Display(Name = "Ward Business")]
         public bool Ward_Business { get; set; }
         public bool Sacrament { get; set; }
@@ -32,7 +34,9 @@ namespace SacramentPlanner.Models
         [Required]
         [Display(Name = "Closing Hymn")]
         public int Closing_Hymn { get; set; }
-        public int Benediction { get; set; }
+
+        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "By Invitation")]
+        public int? Benediction { get; set; }
 
 
         [ForeignKey("WardID")]
@@ -52,8 +56,7 @@ namespace SacramentPlanner.Models
 
         [ForeignKey("Invocation")]
         [Display(Name = "Invocation")]
-        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "By Invitation")]
-        public Directory? InvocationDirectory { get; set; }
+        public Directory InvocationDirectory { get; set; }
 
         [ForeignKey("Sacrament_Hymn")]
         [Display(Name = "Sacrament Hymn")]
@@ -66,7 +69,7 @@ namespace SacramentPlanner.Models
         [ForeignKey("Benediction")]
         [Display(Name = "Benediction")]
         [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "By Invitation")]
-        public Directory? BenedictionDirectory { get; set; }
+        public Directory BenedictionDirectory { get; set; }
 
 
 
