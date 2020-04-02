@@ -52,7 +52,8 @@ namespace SacramentPlanner.Models
 
         [ForeignKey("Invocation")]
         [Display(Name = "Invocation")]
-        public Directory InvocationDirectory { get; set; }
+        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "By Invitation")]
+        public Directory? InvocationDirectory { get; set; }
 
         [ForeignKey("Sacrament_Hymn")]
         [Display(Name = "Sacrament Hymn")]
@@ -64,7 +65,8 @@ namespace SacramentPlanner.Models
 
         [ForeignKey("Benediction")]
         [Display(Name = "Benediction")]
-        public Directory BenedictionDirectory { get; set; }
+        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "By Invitation")]
+        public Directory? BenedictionDirectory { get; set; }
 
 
 
