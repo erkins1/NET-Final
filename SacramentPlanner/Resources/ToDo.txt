@@ -4,3 +4,7 @@
 Edit Member
 	Change it so it says the name of the ward instead of the ID
 	Allow for the Calling input to be NULL
+
+Get Agenda item section to work correctly
+	Get it all to show up
+	Get to to save to the database
