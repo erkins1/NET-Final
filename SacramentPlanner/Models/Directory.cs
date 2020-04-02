@@ -39,6 +39,7 @@ namespace SacramentPlanner.Models
     }
     public enum Title
     {
+        None,
         [Display(Name = "Stake President")]
         StakePresident,
         Bishop,

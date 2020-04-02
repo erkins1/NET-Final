@@ -33,16 +33,14 @@
                 <input asp-for="Age" class="form-control" />
                 <span asp-validation-for="Age" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Sex" class="control-label"></label>
-                <select asp-for="Sex" class="form-control"></select>
-                <span asp-validation-for="Sex" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Calling" class="control-label"></label>
-                <select asp-for="Calling" class="form-control"></select>
-                <span asp-validation-for="Calling" class="text-danger"></span>
-            </div>
+            <p>Gender: </p>
+            <select class="form-control" asp-for="Sex" asp-items="Html.GetEnumSelectList<Gender>()">
+                <option selected="selected" value="">Please select</option>
+            </select>
+            <p>Calling: </p>
+            <select class="form-control" asp-for="Calling" asp-items="Html.GetEnumSelectList<Title>()">
+                <option selected="selected" value="">Please select</option>
+            </select>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

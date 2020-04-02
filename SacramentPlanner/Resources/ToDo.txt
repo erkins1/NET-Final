@@ -1,0 +1,6 @@
+﻿Create Member
+	Change it so it says the name of the ward instead of the ID
+	Allow for the Calling input to be NULL
+Edit Member
+	Change it so it says the name of the ward instead of the ID
+	Allow for the Calling input to be NULL
