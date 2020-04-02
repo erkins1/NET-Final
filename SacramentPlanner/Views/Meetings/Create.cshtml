@@ -89,7 +89,12 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
 }
 
 @*Scripts for Agenda items*@
-<script src="~/js/agendaItems.js"></script>
+<script type="text/javascript">
+    let content = "@ViewBag";
+    console.log(content);
+</script>
+<script src="~/js/agendaItems.js"> </script>

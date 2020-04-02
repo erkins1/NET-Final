@@ -64,13 +64,15 @@ namespace SacramentPlanner.Controllers
         public IActionResult Create()
         {
             ViewData["Benediction"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
-            ViewData["Closing_Hymn"] = new SelectList(_context.Hymn, "HymnID", "HymnID");
+            ViewData["Closing_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
             ViewData["Conducting"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
             ViewData["Invocation"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
-            ViewData["Opening_Hymn"] = new SelectList(_context.Hymn, "HymnID", "HymnID");
+            ViewData["Opening_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
             ViewData["Presiding"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
-            ViewData["Sacrament_Hymn"] = new SelectList(_context.Hymn, "HymnID", "HymnID");
+            ViewData["Sacrament_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
             ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "WardID");
+            ViewData["MemberID"] = new SelectList(_context.Ward, "DirectoryID", "First_Name");
+            ViewData["Sacrament_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
             return View();
         }
 
