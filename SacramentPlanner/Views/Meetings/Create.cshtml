@@ -19,23 +19,23 @@
             </div>
             <div class="form-group">
                 <label asp-for="WardID" class="control-label"></label>
-                <select asp-for="WardID" class ="form-control" asp-items="ViewBag.WardID"></select>
+                <select asp-for="WardID" class="form-control" asp-items="ViewBag.WardID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Presiding" class="control-label"></label>
-                <select asp-for="Presiding" class ="form-control" asp-items="ViewBag.Presiding"></select>
+                <select asp-for="Presiding" class="form-control" asp-items="ViewBag.Presiding"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Conducting" class="control-label"></label>
-                <select asp-for="Conducting" class ="form-control" asp-items="ViewBag.Conducting"></select>
+                <select asp-for="Conducting" class="form-control" asp-items="ViewBag.Conducting"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Opening_Hymn" class="control-label"></label>
-                <select asp-for="Opening_Hymn" class ="form-control" asp-items="ViewBag.Opening_Hymn"></select>
+                <select asp-for="Opening_Hymn" class="form-control" asp-items="ViewBag.Opening_Hymn"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Invocation" class="control-label"></label>
-                <select asp-for="Invocation" class ="form-control" asp-items="ViewBag.Invocation"></select>
+                <select asp-for="Invocation" class="form-control" asp-items="ViewBag.Invocation"></select>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -49,15 +49,24 @@
             </div>
             <div class="form-group">
                 <label asp-for="Sacrament_Hymn" class="control-label"></label>
-                <select asp-for="Sacrament_Hymn" class ="form-control" asp-items="ViewBag.Sacrament_Hymn"></select>
+                <select asp-for="Sacrament_Hymn" class="form-control" asp-items="ViewBag.Sacrament_Hymn"></select>
             </div>
+
+            @*All this code below is for adding Agenda items*@
+            <div class="form-group" id="Agenda-Items"></div>
+            <div class="form-group" id="Agenda-Add-Button">
+                <input type="button" value="+ Add Agenda Item" class="btn btn-primary" />
+            </div>
+
+
+
             <div class="form-group">
                 <label asp-for="Closing_Hymn" class="control-label"></label>
-                <select asp-for="Closing_Hymn" class ="form-control" asp-items="ViewBag.Closing_Hymn"></select>
+                <select asp-for="Closing_Hymn" class="form-control" asp-items="ViewBag.Closing_Hymn"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Benediction" class="control-label"></label>
-                <select asp-for="Benediction" class ="form-control" asp-items="ViewBag.Benediction"></select>
+                <select asp-for="Benediction" class="form-control" asp-items="ViewBag.Benediction"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -73,3 +82,6 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+@*Scripts for Agenda items*@
+<script src="~/js/agendaItems.js"></script>
