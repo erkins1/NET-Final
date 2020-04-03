@@ -3,5 +3,9 @@
 Edit Member
 	Change it so it says the name of the ward instead of the ID
 Get Agenda item section to work correctly
-	Get it all to show up
-	Get to to save to the database
+	Attach the create agenda item to the Meeting table
+	Use JS to make certain fields appear and disapear as needed
+	Make sure the meeting id is either passed to the agenda item or easy to select
+Meeting Details View
+	Gonna need a lot of code to make all this show up in a nice, neat format
+	Make sure it can pull information from all tables

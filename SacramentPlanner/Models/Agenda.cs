@@ -10,6 +10,7 @@ namespace SacramentPlanner.Models
     public class Agenda
     {
         public int AgendaID { get; set; }
+        public int MeetingID { get; set; }
         [Required] 
         public Category Section { get; set; }
         public int MemberID { get; set; }
@@ -23,6 +24,9 @@ namespace SacramentPlanner.Models
 
         [ForeignKey("HymnID")]
         public Hymn Hymn { get; set; }
+
+        [ForeignKey("MeetingID")]
+        public Meeting Meeting { get; set; }
 
 
         public enum Category
