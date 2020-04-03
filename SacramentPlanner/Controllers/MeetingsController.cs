@@ -71,8 +71,8 @@ namespace SacramentPlanner.Controllers
             ViewData["Presiding"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
             ViewData["Sacrament_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
             ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "WardID");
-            ViewData["MemberID"] = new SelectList(_context.Ward, "DirectoryID", "First_Name");
-            ViewData["Sacrament_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
+            //ViewData["MemberID"] = new SelectList(_context.Ward, "DirectoryID", "First_Name");
+            //ViewData["Sacrament_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
             return View();
         }
 

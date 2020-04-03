@@ -54,11 +54,11 @@
 
             @*All this code below is for adding Agenda items*@
             <div class="form-group" id="Agenda-Items-List">
-                
+
 
             </div>
             <div class="form-group" id="Agenda-Add-Button">
-                <input type="button" value="+ Add Agenda Item" class="btn btn-primary"  onclick="addNewAgendaItem()" />
+                <input type="button" value="+ Add Agenda Item" class="btn btn-primary" onclick="addNewAgendaItem()" />
             </div>
 
 
@@ -86,10 +86,3 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
 }
-
-@*Scripts for Agenda items*@
-<script type="text/javascript">
-    let content = "@ViewBag";
-    console.log(content);
-</script>
-<script src="~/js/agendaItems.js"> </script>

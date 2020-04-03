@@ -12,8 +12,7 @@
  */
 
 //The drop downs don't work with the viewbag. Is that becasue viewbag disapears once the page is loaded?
-
-let content = ViewBag.Content;
+_SESSION["content"] = content;
 console.log(content);
 
 //This creates the dropdown that helps the user choose the item they want to add
