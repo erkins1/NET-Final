@@ -54,10 +54,10 @@ function changeForm() {
             //console.log("Musical Hit");
             break;
         default:
-            member.className = "form-group";
+            member.className = "form-group hide";
             hymn.className = "form-group hide";
             special_event.className = "form-group hide";
-            subject.className = "form-group";
+            subject.className = "form-group hide";
             //console.log("Default Hit");
             break;
 

@@ -6,78 +6,84 @@
 
     <h1 class="meetings-details-title">@Html.DisplayFor(model => model.Ward.Ward_Name) Ward, @Html.DisplayFor(model => model.Date)</h1>
 
-<div>
-    <hr />
-    <dl class="row">
+    <div>
+        <hr />
+        <dl class="row meetings-details-section">
 
-        <dt class="col-sm-2 meetings-details-label">
-            @Html.DisplayNameFor(model => model.PresidingDirectory):
-        </dt>
-        <dd class="col-sm-10 meetings-details-value">
-            @Html.DisplayFor(model => model.PresidingDirectory.Full_Name)
-        </dd>
-        <dt class="col-sm-2 meetings-details-label">
-            @Html.DisplayNameFor(model => model.ConductingDirectory):
-        </dt>
-        <dd class="col-sm-10 meetings-details-value">
-            @Html.DisplayFor(model => model.ConductingDirectory.Full_Name)
-        </dd>
+            <dt class="col-sm-6 meetings-details-label">
+                @Html.DisplayNameFor(model => model.PresidingDirectory):
+            </dt>
+            <dd class="col-sm-6 meetings-details-value">
+                @Html.DisplayFor(model => model.PresidingDirectory.Full_Name)
+            </dd>
+            <dt class="col-sm-6 meetings-details-label">
+                @Html.DisplayNameFor(model => model.ConductingDirectory):
+            </dt>
+            <dd class="col-sm-6 meetings-details-value">
+                @Html.DisplayFor(model => model.ConductingDirectory.Full_Name)
+            </dd>
         </dl>
         <hr />
 
-        <dl class="row">
-            <dt class="col-sm-2 meetings-details-label">
+        <dl class="row meetings-details-section">
+            <dt class="col-sm-6 meetings-details-label">
                 @Html.DisplayNameFor(model => model.Opening_HymnHymn):
             </dt>
-            <dd class="col-sm-10 meetings-details-value">
+            <dd class="col-sm-6 meetings-details-value">
                 @Html.DisplayFor(model => model.Opening_HymnHymn.Hymn_Number_Name)
             </dd>
-            <dt class="col-sm-2 meetings-details-label">
+            <dt class="col-sm-6 meetings-details-label">
                 @Html.DisplayNameFor(model => model.InvocationDirectory):
             </dt>
-            <dd class="col-sm-10 meetings-details-value">
+            <dd class="col-sm-6 meetings-details-value">
                 @Html.DisplayFor(model => model.InvocationDirectory.Full_Name)
             </dd>
-            <dt class="col-sm-2 meetings-details-label">
-                @Html.DisplayNameFor(model => model.Ward_Business):
-            </dt>
-            <dd class="col-sm-10 meetings-details-value">
-                @Html.DisplayFor(model => model.Ward_Business)
-            </dd>
-            </dl>
-            <hr />
+            @{if (Model.Ward_Business == true)
+                {
+                    <dt class="col-sm-12 meetings-details-misc">
+                        Ward Business
+                    </dt>
+                    }
+                }
 
-            <dl class="row">
-                <dt class="col-sm-2 meetings-details-label">
-                    @Html.DisplayNameFor(model => model.Sacrament):
-                </dt>
-                <dd class="col-sm-10 meetings-details-value">
-                    @Html.DisplayFor(model => model.Sacrament)
-                </dd>
-                <dt class="col-sm-2 meetings-details-label">
-                    @Html.DisplayNameFor(model => model.Sacrament_HymnHymn):
-                </dt>
-                <dd class="col-sm-10 meetings-details-value">
-                    @Html.DisplayFor(model => model.Sacrament_HymnHymn.Hymn_Number_Name)
-                </dd>
+        </dl>
+        <hr />
+
+        @{if (Model.Sacrament == true)
+            {
+                <dl class="row meetings-details-section">
+                    <dt class="col-sm-6 meetings-details-label">
+                        @Html.DisplayNameFor(model => model.Sacrament_HymnHymn):
+                    </dt>
+                    <dd class="col-sm-6 meetings-details-value">
+                        @Html.DisplayFor(model => model.Sacrament_HymnHymn.Hymn_Number_Name)
+                    </dd>
+                    <dt class="col-sm-12 meetings-details-misc">
+                        Sacrament will be administered by the Priesthood
+                        </dt>
                 </dl>
                 <hr />
+            }
+        }
 
-                <dl class="row">
-                    <dt class="col-sm-2 meetings-details-label">
-                        @Html.DisplayNameFor(model => model.Closing_HymnHymn):
-                    </dt>
-                    <dd class="col-sm-10 meetings-details-value">
-                        @Html.DisplayFor(model => model.Closing_HymnHymn.Hymn_Number_Name)
-                    </dd>
-                    <dt class="col-sm-2 meetings-details-label">
-                        @Html.DisplayNameFor(model => model.BenedictionDirectory):
-                    </dt>
-                    <dd class="col-sm-10 meetings-details-value">
-                        @Html.DisplayFor(model => model.BenedictionDirectory.Full_Name)
-                    </dd>
-                </dl>
-</div>
+
+
+
+        <dl class="row meetings-details-section">
+            <dt class="col-sm-6 meetings-details-label">
+                @Html.DisplayNameFor(model => model.Closing_HymnHymn):
+            </dt>
+            <dd class="col-sm-6 meetings-details-value">
+                @Html.DisplayFor(model => model.Closing_HymnHymn.Hymn_Number_Name)
+            </dd>
+            <dt class="col-sm-6 meetings-details-label">
+                @Html.DisplayNameFor(model => model.BenedictionDirectory):
+            </dt>
+            <dd class="col-sm-6 meetings-details-value">
+                @Html.DisplayFor(model => model.BenedictionDirectory.Full_Name)
+            </dd>
+        </dl>
+    </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.MeetingID">Edit</a> |
     <a asp-action="Index">Back to List</a>

@@ -79,3 +79,23 @@ body {
 .hide{
     display: none;
 }
+
+/*
+    Custom CSS
+*/
+.meetings-details-title {
+    text-align: center;
+    font-size: 3em;
+}
+
+.meetings-details-label {
+    text-align: right;
+}
+
+.meetings-details-section {
+    font-size: 1.6em;
+}
+.meetings-details-misc {
+    text-align: center;
+    padding: 20px 0px;
+}
