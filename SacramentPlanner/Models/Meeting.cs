@@ -67,8 +67,7 @@ namespace SacramentPlanner.Models
         public Hymn Closing_HymnHymn { get; set; }
 
         [ForeignKey("Benediction")]
-        [Display(Name = "Benediction")]
-        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "By Invitation")]
+        [Display(Name = "Invocation")]
         public Directory BenedictionDirectory { get; set; }
 
 
