@@ -85,20 +85,21 @@
             var agendas = ViewBag.Agenda;
         }
 
-        <dl class="row meetings-details-section">
-            @foreach (var agenda in agendas)
+    <dl class="row meetings-details-section">
+        @foreach (var agenda in agendas)
+        {
+            if (@agenda.Directory.Full_Name != null)
             {
-                <p>@agenda.Hymn.Hymn_Name</p>
+                <dt class="col-sm-6 meetings-details-label">
+                    Speaker: 
+                </dt>
+                <dd class="col-sm-6 meetings-details-value">
+                    @agenda.Directory.Full_Name
+                </dd>
             }
-        </dl>
+        }
+    </dl>
         <dl class="row meetings-details-section">
-            <dt class="col-sm-6 meetings-details-label">
-                @Html.DisplayNameFor(model => model.Meeting.Closing_HymnHymn):
-            </dt>
-            <dd class="col-sm-6 meetings-details-value">
-                @Html.DisplayFor(model => model.Meeting.Closing_HymnHymn.Hymn_Number_Name)
-            </dd>
-
 
 
         </dl>
