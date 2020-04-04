@@ -99,3 +99,9 @@ body {
     text-align: center;
     padding: 20px 0px;
 }
+
+.meetings-details-notes {
+    text-align: center;
+    font-weight: normal!important;
+    font-style: italic;
+}

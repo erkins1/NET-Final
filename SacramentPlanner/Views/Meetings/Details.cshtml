@@ -88,21 +88,56 @@
     <dl class="row meetings-details-section">
         @foreach (var agenda in agendas)
         {
-            if (@agenda.Directory.Full_Name != null)
+            switch (@agenda.Section.ToString())
             {
-                <dt class="col-sm-6 meetings-details-label">
-                    Speaker: 
-                </dt>
-                <dd class="col-sm-6 meetings-details-value">
-                    @agenda.Directory.Full_Name
-                </dd>
+                case "Speaker":
+                    <dt class="col-sm-6 meetings-details-label">
+                        Speaker:
+                    </dt>
+                    <dd class="col-sm-6 meetings-details-value">
+                        @agenda.Directory.Full_Name
+                    </dd>
+                    break;
+                case "Special_Event":
+                    <dt class="col-sm-12 meetings-details-misc">
+                        @agenda.Special_Event_Text
+                    </dt>
+                    break;
+                case "Hymn":
+                    <dt class="col-sm-6 meetings-details-label">
+                        Intermediate Hymn:
+                    </dt>
+                    <dd class="col-sm-6 meetings-details-value">
+                        @agenda.Hymn.Hymn_Number_Name
+                    </dd>
+                    break;
+                case "Special_Musical_Number":
+                    <dt class="col-sm-6 meetings-details-label">
+                        Special Musical Number:
+                    </dt>
+                    <dd class="col-sm-6 meetings-details-value">
+                        @agenda.Special_Event_Text
+                    </dd>
+                    break;
+                case "Testimony_Meeting":
+                    <dt class="col-sm-12 meetings-details-misc">
+                        Sharing of Testimonies
+                    </dt>
+                    break;
+                default:
+                    <dt class="col-sm-12 meetings-details-misc">
+                        We hit the default...
+                    </dt>
+                    break;
+
             }
+            <dt class="col-sm-12 meetings-details-notes">
+                @agenda.Notes
+            </dt>
+
         }
     </dl>
-        <dl class="row meetings-details-section">
-
-
-        </dl>
+        
 
 
 
