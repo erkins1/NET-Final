@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<SacramentPlanner.Models.Meeting>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Meetings";
 }
 
-<h1>Index</h1>
+<h1>Meetings</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -27,7 +27,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @Html.DisplayFor(modelItem => item.Formatted_Date)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Ward.Ward_Name)

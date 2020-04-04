@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<SacramentPlanner.Models.Agenda>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Agenda Items";
 }
 
-<h1>Index</h1>
+<h1>Agenda Items</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -30,9 +30,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Hymn)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Meeting)
-            </th>
+            
             <th></th>
         </tr>
     </thead>
@@ -57,9 +55,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Hymn.HymnID)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Meeting.MeetingID)
-            </td>
+           
             <td>
                 <a asp-action="Edit" asp-route-id="@item.AgendaID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.AgendaID">Details</a> |

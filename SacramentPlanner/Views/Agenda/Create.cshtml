@@ -23,11 +23,15 @@
             </div>
             <div class="form-group" id="MemberID-div">
                 <label asp-for="MemberID" class="control-label"></label>
-                <select asp-for="MemberID" class="form-control" asp-items="ViewBag.MemberID"></select>
+                <select asp-for="MemberID" class="form-control" asp-items="ViewBag.MemberID">
+                    <option selected="selected" value="">Please select</option>
+                </select>
             </div>
             <div class="form-group hide" id="HymnID-div">
                 <label asp-for="HymnID" class="control-label"></label>
-                <select asp-for="HymnID" class="form-control" asp-items="ViewBag.HymnID"></select>
+                <select asp-for="HymnID" class="form-control" asp-items="ViewBag.HymnID">
+                    <option selected="selected" value="">Please select</option>
+                </select>
             </div>
             <div class="form-group hide" id="Special_Event-div">
                 <label asp-for="Special_Event_Text" class="control-label"></label>

@@ -27,7 +27,6 @@ namespace SacramentPlanner.Models
         [Display(Name = "Opening Hymn")]
         public int Opening_Hymn { get; set; }
 
-        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "By Invitation")]
         public int? Invocation { get; set; }
         [Display(Name = "Ward Business")]
         public bool Ward_Business { get; set; }
@@ -39,7 +38,6 @@ namespace SacramentPlanner.Models
         [Display(Name = "Closing Hymn")]
         public int Closing_Hymn { get; set; }
 
-        [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "By Invitation")]
         public int? Benediction { get; set; }
 
 

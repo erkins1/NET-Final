@@ -73,8 +73,8 @@ namespace SacramentPlanner.Controllers
         // GET: Agenda/Create
         public IActionResult Create()
         {
-            ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
-            ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "HymnID");
+            ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "Full_Name");
+            ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Number_Name");
             ViewData["MeetingID"] = new SelectList(_context.Meeting, "MeetingID", "MeetingID", AgendaMeetingID);
 
             return View();
@@ -93,8 +93,8 @@ namespace SacramentPlanner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "First_Name", agenda.MemberID);
-            ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "HymnID", agenda.HymnID);
+            ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "Full_Name", agenda.MemberID);
+            ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Number_Name", agenda.HymnID);
             ViewData["MeetingID"] = new SelectList(_context.Meeting, "MeetingID", "MeetingID", agenda.MeetingID);
             return View(agenda);
         }
@@ -112,8 +112,8 @@ namespace SacramentPlanner.Controllers
             {
                 return NotFound();
             }
-            ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "First_Name", agenda.MemberID);
-            ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "HymnID", agenda.HymnID);
+            ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "Full_Name", agenda.MemberID);
+            ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Number_Name", agenda.HymnID);
             ViewData["MeetingID"] = new SelectList(_context.Meeting, "MeetingID", "MeetingID", agenda.MeetingID);
             return View(agenda);
         }
@@ -150,8 +150,8 @@ namespace SacramentPlanner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "First_Name", agenda.MemberID);
-            ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "HymnID", agenda.HymnID);
+            ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "Full_Name", agenda.MemberID);
+            ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Number_Name", agenda.HymnID);
             ViewData["MeetingID"] = new SelectList(_context.Meeting, "MeetingID", "MeetingID", agenda.MeetingID);
             return View(agenda);
         }

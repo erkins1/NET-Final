@@ -11,15 +11,22 @@ namespace SacramentPlanner.Models
     {
         public int AgendaID { get; set; }
         public int MeetingID { get; set; }
-        [Required] 
+        [Required]
+        [Display(Name = "Category")]
         public Category Section { get; set; }
-        public int MemberID { get; set; }
-        public int HymnID { get; set; }
+        [Display(Name = "Member")]
+        public int? MemberID { get; set; }
+        [Display(Name = "Hymn")]
+        public int? HymnID { get; set; }
+        [Display(Name = "Special Event")]
         public string Special_Event_Text { get; set; }
+        [Display(Name = "Notes")]
         public string Notes { get; set; }
+        [Display(Name = "Subject")]
         public string Subject { get; set; }
 
         [ForeignKey("MemberID")]
+        [Display(Name = "Member")]
         public Directory Directory { get; set; }
 
         [ForeignKey("HymnID")]
