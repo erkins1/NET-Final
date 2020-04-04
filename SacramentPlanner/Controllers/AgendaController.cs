@@ -20,11 +20,22 @@ namespace SacramentPlanner.Controllers
         }
 
         // GET: Agenda
-        public async Task<IActionResult> Index()
+        // This was removed in favor of the index below
+        /*public async Task<IActionResult> Index()
         {
             var sacramentPlannerContext = _context.Agenda.Include(a => a.Directory).Include(a => a.Hymn).Include(a => a.Meeting);
             return View(await sacramentPlannerContext.ToListAsync());
         }
+        */
+
+        // GET: Agenda/5
+        // Returns the index filtered for a specific meeting
+        public async Task<IActionResult> Index(int? id)
+        {
+            var sacramentPlannerContext = _context.Agenda.Include(a => a.Directory).Include(a => a.Hymn).Include(a => a.Meeting).Where(a => a.MeetingID == id);
+            return View(await sacramentPlannerContext.ToListAsync());
+        }
+
 
         // GET: Agenda/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -53,6 +64,7 @@ namespace SacramentPlanner.Controllers
             ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
             ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "HymnID");
             ViewData["MeetingID"] = new SelectList(_context.Meeting, "MeetingID", "MeetingID");
+
             return View();
         }
 

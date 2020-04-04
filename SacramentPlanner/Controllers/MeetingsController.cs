@@ -34,6 +34,18 @@ namespace SacramentPlanner.Controllers
             return View(await sacramentPlannerContext.ToListAsync());
         }
 
+        //GET: Agenda/5
+        //Forward the user to the Agenda controller with the meeting ID
+        public IActionResult Agenda(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            return RedirectToAction("Index", "Agenda", new { id = id });
+        }
+
         // GET: Meetings/Details/5
         public async Task<IActionResult> Details(int? id)
         {

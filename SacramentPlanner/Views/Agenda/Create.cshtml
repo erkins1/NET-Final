@@ -12,10 +12,11 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group hide" id="MeetingID-div">
-                <label asp-for="MeetingID" class="control-label"></label>
-                <select asp-for="MeetingID" class="form-control" asp-items="ViewBag.MeetingID"></select>
-            </div>
+            <input type="hidden" asp-for="MeetingID" value="ViewBag.MeetingID"/>
+            @*<div class="form-group hide" id="MeetingID-div">
+            <label asp-for="MeetingID" class="control-label"></label>
+            <select asp-for="MeetingID" class="form-control" asp-items="ViewBag.MeetingID"></select>
+        </div>*@
             <div class="form-group">
                 <label asp-for="Section" class="control-label"></label>
                 <select asp-for="Section" class="form-control" id="sectionDropdown" asp-items="Html.GetEnumSelectList<Category>()"></select>

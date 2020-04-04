@@ -30,6 +30,7 @@
                 @Html.DisplayFor(modelItem => item.Ward.Ward_Name)
             </td>
             <td>
+                <a asp-action="Agenda" asp-route-id="@item.MeetingID">View Agenda Items</a> |
                 <a asp-action="Edit" asp-route-id="@item.MeetingID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.MeetingID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.MeetingID">Delete</a>
