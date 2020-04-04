@@ -37,6 +37,24 @@ namespace SacramentPlanner.Models
         [NotMapped]
         public string Full_Name { get { return Last_Name + ", " + First_Name; } }
 
+        [NotMapped]
+        public string Title_Name { get {
+                string casualTitle;
+                if (Calling.ToString() != "")
+                {
+                    casualTitle = Calling.ToString();
+                }
+                else if (Sex.ToString() == "Male")
+                {
+                    casualTitle = "Brother";
+                }
+                else
+                {
+                    casualTitle = "Sister";
+                }
+                return casualTitle + " " + First_Name + " " + Last_Name;
+                } 
+        }
 
     }
     public enum Gender

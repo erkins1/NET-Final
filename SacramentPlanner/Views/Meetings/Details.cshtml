@@ -14,13 +14,13 @@
                 @Html.DisplayNameFor(model => model.Meeting.PresidingDirectory):
             </dt>
             <dd class="col-sm-6 meetings-details-value">
-                @Html.DisplayFor(model => model.Meeting.PresidingDirectory.Full_Name)
+                @Html.DisplayFor(model => model.Meeting.PresidingDirectory.Title_Name)
             </dd>
             <dt class="col-sm-6 meetings-details-label">
                 @Html.DisplayNameFor(model => model.Meeting.ConductingDirectory):
             </dt>
             <dd class="col-sm-6 meetings-details-value">
-                @Html.DisplayFor(model => model.Meeting.ConductingDirectory.Full_Name)
+                @Html.DisplayFor(model => model.Meeting.ConductingDirectory.Title_Name)
             </dd>
         </dl>
         <hr />
@@ -40,7 +40,7 @@
                 if (Model.Meeting.InvocationDirectory != null)
                 {
                     <dd class="col-sm-6 meetings-details-value">
-                        @Html.DisplayFor(model => model.Meeting.InvocationDirectory.Full_Name)
+                        @Html.DisplayFor(model => model.Meeting.InvocationDirectory.Title_Name)
                     </dd>
                 }
                 else
@@ -95,7 +95,7 @@
                         Speaker:
                     </dt>
                     <dd class="col-sm-6 meetings-details-value">
-                        @agenda.Directory.Full_Name
+                        @agenda.Directory.Title_Name
                     </dd>
                     break;
                 case "Special_Event":
@@ -156,7 +156,7 @@
                 if (Model.Meeting.BenedictionDirectory != null)
                 {
                     <dd class="col-sm-6 meetings-details-value">
-                        @Html.DisplayFor(model => model.Meeting.BenedictionDirectory.Full_Name)
+                        @Html.DisplayFor(model => model.Meeting.BenedictionDirectory.Title_Name)
                     </dd>
                 }
                 else
