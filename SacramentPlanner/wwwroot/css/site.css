@@ -88,6 +88,11 @@ body {
     font-size: 3em;
 }
 
+h2.meetings-details-title {
+    text-align: center;
+    font-size: 2.5em;
+}
+
 .meetings-details-label {
     text-align: right;
 }

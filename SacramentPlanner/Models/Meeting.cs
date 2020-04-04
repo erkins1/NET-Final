@@ -13,6 +13,9 @@ namespace SacramentPlanner.Models
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
+        [NotMapped]
+        public string Formatted_Date { get { return Date.ToString("dddd MMMM dd, yyyy"); } }
+
         [Required]
         [Display(Name = "Ward")]
         public int WardID { get; set; }

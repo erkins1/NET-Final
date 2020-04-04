@@ -4,7 +4,8 @@
     ViewData["Title"] = "Details";
 }
 
-    <h1 class="meetings-details-title">@Html.DisplayFor(model => model.Meeting.Ward.Ward_Name) Ward, @Html.DisplayFor(model => model.Meeting.Date)</h1>
+    <h1 class="meetings-details-title">@Html.DisplayFor(model => model.Meeting.Ward.Ward_Name) Ward</h1>
+<h2 class="meetings-details-title">@Html.DisplayFor(model => model.Meeting.Formatted_Date)</h2>
 
     <div>
         <hr />
