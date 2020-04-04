@@ -73,23 +73,25 @@
                     </dd>
                     <dt class="col-sm-12 meetings-details-misc">
                         Sacrament will be administered by the Priesthood
-                        </dt>
+                    </dt>
                 </dl>
                 <hr />
             }
         }
 
-    @*This is the Agenda Items*@
-    <dl class="row meetings-details-section">
-        @foreach (var item in ViewData["Agenda"] as List<SacramentPlanner.Models.Agenda>)
-        {
-            <dt>
-                @item.Notes
-            </dt>
-        }
-        <dt>Look Here!</dt>
-            @ViewData["Agenda"].[0].Notes.ToString()
+        @*This is the Agenda Items*@
 
+        @{
+            var agendas = ViewBag.Agenda;
+        }
+
+        <dl class="row meetings-details-section">
+            @foreach (var agenda in agendas)
+            {
+                <p>@agenda.Hymn.Hymn_Name</p>
+            }
+        </dl>
+        <dl class="row meetings-details-section">
             <dt class="col-sm-6 meetings-details-label">
                 @Html.DisplayNameFor(model => model.Meeting.Closing_HymnHymn):
             </dt>
@@ -103,31 +105,31 @@
 
 
 
-    <dl class="row meetings-details-section">
-        <dt class="col-sm-6 meetings-details-label">
-            @Html.DisplayNameFor(model => model.Meeting.Closing_HymnHymn):
-        </dt>
-        <dd class="col-sm-6 meetings-details-value">
-            @Html.DisplayFor(model => model.Meeting.Closing_HymnHymn.Hymn_Number_Name)
-        </dd>
-        <dt class="col-sm-6 meetings-details-label">
-            @Html.DisplayNameFor(model => model.Meeting.BenedictionDirectory):
-        </dt>
-        @{
-            if (Model.Meeting.BenedictionDirectory != null)
-            {
-                <dd class="col-sm-6 meetings-details-value">
-                    @Html.DisplayFor(model => model.Meeting.BenedictionDirectory.Full_Name)
-                </dd>
+        <dl class="row meetings-details-section">
+            <dt class="col-sm-6 meetings-details-label">
+                @Html.DisplayNameFor(model => model.Meeting.Closing_HymnHymn):
+            </dt>
+            <dd class="col-sm-6 meetings-details-value">
+                @Html.DisplayFor(model => model.Meeting.Closing_HymnHymn.Hymn_Number_Name)
+            </dd>
+            <dt class="col-sm-6 meetings-details-label">
+                @Html.DisplayNameFor(model => model.Meeting.BenedictionDirectory):
+            </dt>
+            @{
+                if (Model.Meeting.BenedictionDirectory != null)
+                {
+                    <dd class="col-sm-6 meetings-details-value">
+                        @Html.DisplayFor(model => model.Meeting.BenedictionDirectory.Full_Name)
+                    </dd>
+                }
+                else
+                {
+                    <dd class="col-sm-6 meetings-details-value">
+                        By Invitation
+                    </dd>
+                }
             }
-            else
-            {
-                <dd class="col-sm-6 meetings-details-value">
-                    By Invitation
-                </dd>
-            }
-        }
-    </dl>
+        </dl>
     </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.MeetingID">Edit</a> |

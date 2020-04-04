@@ -80,7 +80,7 @@ namespace SacramentPlanner.Controllers
                 .Include(a => a.Hymn)
                 .FirstOrDefaultAsync(m => m.MeetingID == id);
 
-            ViewData["Agenda"] = _context.Agenda
+            ViewBag.Agenda = _context.Agenda
                 .Include(m => m.Meeting)
                 .Include(m => m.Meeting.BenedictionDirectory)
                 .Include(m => m.Meeting.Closing_HymnHymn)
@@ -93,8 +93,6 @@ namespace SacramentPlanner.Controllers
                 .Include(a => a.Directory)
                 .Include(a => a.Hymn)
                 .Where(m => m.MeetingID == id);
-
-
 
             if (meeting == null)
             {
