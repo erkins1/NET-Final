@@ -3,6 +3,21 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 home-title">Sacrament Meeting Planner</h1>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <a asp-action="Index" asp-controller="Directories" class="btn btn-primary index-button-left" role="button">View Directory</a>
+    </div>
+    <div class="col-sm-6">
+        <a asp-action="Index" asp-controller="Meetings" class="btn btn-primary index-button-right" role="button">View Meetings</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <a asp-action="Create" asp-controller="Directories" class="btn btn-primary index-button-left" role="button">Add New Member</a>
+    </div>
+    <div class="col-sm-6">
+        <a asp-action="Create" asp-controller="Meetings" class="btn btn-primary index-button-right" role="button">Create New Meeting</a>
+    </div>
 </div>
