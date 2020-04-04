@@ -29,12 +29,13 @@ namespace SacramentPlanner.Models
         public Meeting Meeting { get; set; }
 
 
-        public enum Category
-        {
-            Speaker,
-            Special_Event,
-            Hymn,
-            Special_Musical_Number
-        }
+        
+    }
+    public enum Category
+    {
+        Speaker,
+        Special_Event,
+        Hymn,
+        Special_Musical_Number
     }
 }
