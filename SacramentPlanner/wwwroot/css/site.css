@@ -102,13 +102,13 @@ h2.meetings-details-title {
 }
 .meetings-details-misc {
     text-align: center;
-    padding: 20px 0px;
 }
 
 .meetings-details-notes {
     text-align: center;
     font-weight: normal!important;
     font-style: italic;
+    padding-bottom: 20px;
 }
 
 .index-button-right {

@@ -38,19 +38,13 @@
             @Html.DisplayNameFor(model => model.Directory)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Directory.First_Name)
+            @Html.DisplayFor(model => model.Directory.Full_Name)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Hymn)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Hymn.HymnID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Meeting)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.MeetingID)
+            @Html.DisplayFor(model => model.Hymn.Hymn_Number_Name)
         </dd>
     </dl>
 </div>
