@@ -30,7 +30,8 @@ namespace SacramentPlanner.Controllers
                 .Include(m => m.Opening_HymnHymn)
                 .Include(m => m.PresidingDirectory)
                 .Include(m => m.Sacrament_HymnHymn)
-                .Include(m => m.Ward);
+                .Include(m => m.Ward)
+                .OrderByDescending(m => m.Date);
             return View(await sacramentPlannerContext.ToListAsync());
         }
 
