@@ -42,7 +42,30 @@ namespace SacramentPlanner.Models
                 string casualTitle;
                 if (Calling.ToString() != "")
                 {
-                    casualTitle = Calling.ToString();
+                    switch (Calling)
+                    {
+                        case Title.StakePresident:
+                            casualTitle = "Stake President";
+                            break;
+                        case Title.Bishop:
+                            casualTitle = "Bishop";
+                            break;
+                        case Title.StakeFirstCouncellor:
+                            casualTitle = "Stake First Councellor";
+                            break;
+                        case Title.StakeSecondCouncellor:
+                            casualTitle = "Stake Second Councellor";
+                            break;
+                        case Title.WardFirstCouncellor:
+                            casualTitle = "Ward First Councellor";
+                            break;
+                        case Title.WardSecondCouncellor:
+                            casualTitle = "Ward Second Councellor";
+                            break;
+                        default:
+                            casualTitle = "";
+                            break;
+                    }
                 }
                 else if (Sex.ToString() == "Male")
                 {
