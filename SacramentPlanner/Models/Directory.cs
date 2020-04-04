@@ -32,6 +32,11 @@ namespace SacramentPlanner.Models
 
         public Title? Calling { get; set; }
 
+
+        [NotMapped]
+        public string Full_Name { get { return Last_Name + ", " + First_Name; } }
+
+
     }
     public enum Gender
     {

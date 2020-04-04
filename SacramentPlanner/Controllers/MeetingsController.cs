@@ -63,7 +63,7 @@ namespace SacramentPlanner.Controllers
         // GET: Meetings/Create
         public IActionResult Create()
         {
-            ViewData["Benediction"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
+            ViewData["Benediction"] = new SelectList(_context.Directory, "DirectoryID", "Full_Name");
             ViewData["Closing_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
             ViewData["Conducting"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
             ViewData["Invocation"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");

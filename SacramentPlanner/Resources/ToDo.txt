@@ -1,11 +1,19 @@
-﻿Create Member
-	Change it so it says the name of the ward instead of the ID
-Edit Member
-	Change it so it says the name of the ward instead of the ID
+﻿On all Models
+	Include display names for all fields
+
 Get Agenda item section to work correctly
 	Attach the create agenda item to the Meeting table
 	Use JS to make certain fields appear and disapear as needed
 	Make sure the meeting id is either passed to the agenda item or easy to select
+
+Get Meeting index to link to Agenda controller
+
+General Cleanup and good looking website
+	First and last names on member dropdowns
+	 - Hymns with their number
+	Update the Home page
+
 Meeting Details View
 	Gonna need a lot of code to make all this show up in a nice, neat format
 	Make sure it can pull information from all tables
+
