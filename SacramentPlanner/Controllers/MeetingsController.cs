@@ -54,18 +54,6 @@ namespace SacramentPlanner.Controllers
                 return NotFound();
             }
 
-            /*
-            var meeting = await _context.Meeting
-                .Include(m => m.BenedictionDirectory)
-                .Include(m => m.Closing_HymnHymn)
-                .Include(m => m.ConductingDirectory)
-                .Include(m => m.InvocationDirectory)
-                .Include(m => m.Opening_HymnHymn)
-                .Include(m => m.PresidingDirectory)
-                .Include(m => m.Sacrament_HymnHymn)
-                .Include(m => m.Ward)
-                .FirstOrDefaultAsync(m => m.MeetingID == id);
-             */
             var meeting = await _context.Agenda
                 .Include(m => m.Meeting)
                 .Include(m => m.Meeting.BenedictionDirectory)
@@ -93,12 +81,12 @@ namespace SacramentPlanner.Controllers
                 .Include(a => a.Directory)
                 .Include(a => a.Hymn)
                 .Where(m => m.MeetingID == id);
-
+            
             if (meeting == null)
             {
-                return NotFound();
+                return View("MissingAgenda");
             }
-
+            
             return View(meeting);
         }
 
