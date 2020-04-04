@@ -14,6 +14,8 @@ namespace SacramentPlanner.Controllers
     {
         private readonly SacramentPlannerContext _context;
 
+        public int? AgendaMeetingID { get; set; }
+
         public AgendaController(SacramentPlannerContext context)
         {
             _context = context;
@@ -32,7 +34,8 @@ namespace SacramentPlanner.Controllers
         // Returns the index filtered for a specific meeting
         public async Task<IActionResult> Index(int? id)
         {
-            var sacramentPlannerContext = _context.Agenda.Include(a => a.Directory).Include(a => a.Hymn).Include(a => a.Meeting).Where(a => a.MeetingID == id);
+            AgendaMeetingID = id;
+            var sacramentPlannerContext = _context.Agenda.Include(a => a.Directory).Include(a => a.Hymn).Include(a => a.Meeting).Where(a => a.MeetingID == AgendaMeetingID);
             return View(await sacramentPlannerContext.ToListAsync());
         }
 
