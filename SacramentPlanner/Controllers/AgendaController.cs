@@ -73,8 +73,6 @@ namespace SacramentPlanner.Controllers
         // GET: Agenda/Create
         public IActionResult Create()
         {
-            //var tempEm
-
             ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
             ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "HymnID");
             ViewData["MeetingID"] = new SelectList(_context.Meeting, "MeetingID", "MeetingID", AgendaMeetingID);
