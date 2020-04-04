@@ -11,6 +11,7 @@ namespace SacramentPlanner.Models
     {
         public int DirectoryID { get; set; }
 
+        [Display(Name = "Ward")]
         public int WardID { get; set; }
         [ForeignKey("WardID")]
         public Ward Ward { get; set; }

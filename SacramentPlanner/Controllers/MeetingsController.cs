@@ -63,13 +63,13 @@ namespace SacramentPlanner.Controllers
         // GET: Meetings/Create
         public IActionResult Create()
         {
-            ViewData["Benediction"] = new SelectList(_context.Directory, "DirectoryID", "Full_Name");
-            ViewData["Closing_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
-            ViewData["Conducting"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
-            ViewData["Invocation"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
-            ViewData["Opening_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
-            ViewData["Presiding"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
-            ViewData["Sacrament_Hymn"] = new SelectList(_context.Hymn, "HymnID", "Hymn_Name");
+            ViewData["Benediction"] = new SelectList(_context.Directory.OrderBy(x => x.Last_Name), "DirectoryID", "Full_Name");
+            ViewData["Closing_Hymn"] = new SelectList(_context.Hymn.OrderBy(x => x.Hymn_Number), "HymnID", "Hymn_Number_Name");
+            ViewData["Conducting"] = new SelectList(_context.Directory.OrderBy(x => x.Last_Name), "DirectoryID", "Full_Name");
+            ViewData["Invocation"] = new SelectList(_context.Directory.OrderBy(x => x.Last_Name), "DirectoryID", "Full_Name");
+            ViewData["Opening_Hymn"] = new SelectList(_context.Hymn.OrderBy(x => x.Hymn_Number), "HymnID", "Hymn_Number_Name");
+            ViewData["Presiding"] = new SelectList(_context.Directory.OrderBy(x => x.Last_Name), "DirectoryID", "Full_Name");
+            ViewData["Sacrament_Hymn"] = new SelectList(_context.Hymn.OrderBy(x => x.Hymn_Number), "HymnID", "Hymn_Number_Name");
             ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "Ward_Name");
 
             return View();
@@ -112,13 +112,13 @@ namespace SacramentPlanner.Controllers
             {
                 return NotFound();
             }
-            ViewData["Benediction"] = new SelectList(_context.Directory, "DirectoryID", "First_Name", meeting.Benediction);
-            ViewData["Closing_Hymn"] = new SelectList(_context.Hymn, "HymnID", "HymnID", meeting.Closing_Hymn);
-            ViewData["Conducting"] = new SelectList(_context.Directory, "DirectoryID", "First_Name", meeting.Conducting);
-            ViewData["Invocation"] = new SelectList(_context.Directory, "DirectoryID", "First_Name", meeting.Invocation);
-            ViewData["Opening_Hymn"] = new SelectList(_context.Hymn, "HymnID", "HymnID", meeting.Opening_Hymn);
-            ViewData["Presiding"] = new SelectList(_context.Directory, "DirectoryID", "First_Name", meeting.Presiding);
-            ViewData["Sacrament_Hymn"] = new SelectList(_context.Hymn, "HymnID", "HymnID", meeting.Sacrament_Hymn);
+            ViewData["Benediction"] = new SelectList(_context.Directory, "DirectoryID", "Full_Name", meeting.Benediction);
+            ViewData["Closing_Hymn"] = new SelectList(_context.Hymn.OrderBy(x => x.Hymn_Number), "HymnID", "Hymn_Number_Name", meeting.Closing_Hymn);
+            ViewData["Conducting"] = new SelectList(_context.Directory.OrderBy(x => x.Last_Name), "DirectoryID", "Full_Name", meeting.Conducting);
+            ViewData["Invocation"] = new SelectList(_context.Directory.OrderBy(x => x.Last_Name), "DirectoryID", "Full_Name", meeting.Invocation);
+            ViewData["Opening_Hymn"] = new SelectList(_context.Hymn.OrderBy(x => x.Hymn_Number), "HymnID", "Hymn_Number_Name", meeting.Opening_Hymn);
+            ViewData["Presiding"] = new SelectList(_context.Directory.OrderBy(x => x.Last_Name), "DirectoryID", "Full_Name", meeting.Presiding);
+            ViewData["Sacrament_Hymn"] = new SelectList(_context.Hymn.OrderBy(x => x.Hymn_Number), "HymnID", "Hymn_Number_Name", meeting.Sacrament_Hymn);
             ViewData["WardID"] = new SelectList(_context.Ward, "WardID", "Ward_Name", meeting.WardID);
             return View(meeting);
         }

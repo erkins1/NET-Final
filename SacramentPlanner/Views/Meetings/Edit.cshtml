@@ -19,9 +19,9 @@
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ward" class="control-label"></label>
-                <select asp-for="Ward" class="form-control" asp-items="ViewBag.WardID"></select>
-                <span asp-validation-for="Ward" class="text-danger"></span>
+                <label asp-for="WardID" class="control-label"></label>
+                <select asp-for="WardID" class="form-control" asp-items="ViewBag.WardID"></select>
+                <span asp-validation-for="WardID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Presiding" class="control-label"></label>
@@ -40,8 +40,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="Invocation" class="control-label"></label>
-                <select asp-for="Invocation" class="form-control" asp-items="ViewBag.Invocation"></select>
-                <span asp-validation-for="Invocation" class="text-danger"></span>
+                <select asp-for="Invocation" class="form-control" asp-items="ViewBag.Invocation">
+                <option value=""></option>
+                </select>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -65,8 +66,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="Benediction" class="control-label"></label>
-                <select asp-for="Benediction" class="form-control" asp-items="ViewBag.Benediction"></select>
-                <span asp-validation-for="Benediction" class="text-danger"></span>
+                <select asp-for="Benediction" class="form-control" asp-items="ViewBag.Benediction">
+                    <option value=""></option>
+                </select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

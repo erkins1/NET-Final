@@ -14,6 +14,7 @@ namespace SacramentPlanner.Models
         public DateTime Date { get; set; }
 
         [Required]
+        [Display(Name = "Ward")]
         public int WardID { get; set; }
         [Required]
         public int Presiding { get; set; }
