@@ -54,6 +54,7 @@ namespace SacramentPlanner.Controllers
                 return NotFound();
             }
 
+            /*
             var meeting = await _context.Meeting
                 .Include(m => m.BenedictionDirectory)
                 .Include(m => m.Closing_HymnHymn)
@@ -64,6 +65,37 @@ namespace SacramentPlanner.Controllers
                 .Include(m => m.Sacrament_HymnHymn)
                 .Include(m => m.Ward)
                 .FirstOrDefaultAsync(m => m.MeetingID == id);
+             */
+            var meeting = await _context.Agenda
+                .Include(m => m.Meeting)
+                .Include(m => m.Meeting.BenedictionDirectory)
+                .Include(m => m.Meeting.Closing_HymnHymn)
+                .Include(m => m.Meeting.ConductingDirectory)
+                .Include(m => m.Meeting.InvocationDirectory)
+                .Include(m => m.Meeting.Opening_HymnHymn)
+                .Include(m => m.Meeting.PresidingDirectory)
+                .Include(m => m.Meeting.Sacrament_HymnHymn)
+                .Include(m => m.Meeting.Ward)
+                .Include(a => a.Directory)
+                .Include(a => a.Hymn)
+                .FirstOrDefaultAsync(m => m.MeetingID == id);
+
+            ViewData["Agenda"] = _context.Agenda
+                .Include(m => m.Meeting)
+                .Include(m => m.Meeting.BenedictionDirectory)
+                .Include(m => m.Meeting.Closing_HymnHymn)
+                .Include(m => m.Meeting.ConductingDirectory)
+                .Include(m => m.Meeting.InvocationDirectory)
+                .Include(m => m.Meeting.Opening_HymnHymn)
+                .Include(m => m.Meeting.PresidingDirectory)
+                .Include(m => m.Meeting.Sacrament_HymnHymn)
+                .Include(m => m.Meeting.Ward)
+                .Include(a => a.Directory)
+                .Include(a => a.Hymn)
+                .Where(m => m.MeetingID == id);
+
+
+
             if (meeting == null)
             {
                 return NotFound();
