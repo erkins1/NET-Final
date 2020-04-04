@@ -105,3 +105,19 @@ body {
     font-weight: normal!important;
     font-style: italic;
 }
+
+.index-button-right {
+    float: left;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.index-button-left {
+    float: right;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.home-title {
+    margin-bottom: 40px;
+}
