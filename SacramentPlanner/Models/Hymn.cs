@@ -14,7 +14,7 @@ namespace SacramentPlanner.Models
         public string Hymn_Name { get; set; }
 
         [NotMapped]
-        public string Hymn_Number_Name { get { return Hymn_Number + ". " + Hymn_Name; } }
+        public string Hymn_Number_Name { get { return "#" + Hymn_Number + " " + Hymn_Name; } }
 
 
     }
