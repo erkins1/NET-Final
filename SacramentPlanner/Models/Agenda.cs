@@ -34,8 +34,12 @@ namespace SacramentPlanner.Models
     public enum Category
     {
         Speaker,
+        [Display(Name = "Special Event")]
         Special_Event,
         Hymn,
-        Special_Musical_Number
+        [Display(Name = "Special Musical Number")]
+        Special_Musical_Number,
+        [Display(Name = "Testimony Meeting")]
+        Testimony_Meeting
     }
 }
