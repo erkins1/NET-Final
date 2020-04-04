@@ -14,7 +14,7 @@ namespace SacramentPlanner.Controllers
     {
         private readonly SacramentPlannerContext _context;
 
-        public int? AgendaMeetingID { get; set; }
+        public static int? AgendaMeetingID { get; set; }
 
         public AgendaController(SacramentPlannerContext context)
         {
@@ -34,11 +34,20 @@ namespace SacramentPlanner.Controllers
         // Returns the index filtered for a specific meeting
         public async Task<IActionResult> Index(int? id)
         {
-            AgendaMeetingID = id;
+            if (id != null) { 
+                AgendaMeetingID = id;
+            }
+            
             var sacramentPlannerContext = _context.Agenda.Include(a => a.Directory).Include(a => a.Hymn).Include(a => a.Meeting).Where(a => a.MeetingID == AgendaMeetingID);
             return View(await sacramentPlannerContext.ToListAsync());
         }
 
+        //GET: Meeting/5
+        //Forward the user to the Meetings controller
+        public IActionResult Meeting()
+        {
+            return RedirectToAction("Index", "Meetings");
+        }
 
         // GET: Agenda/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -64,9 +73,11 @@ namespace SacramentPlanner.Controllers
         // GET: Agenda/Create
         public IActionResult Create()
         {
+            //var tempEm
+
             ViewData["MemberID"] = new SelectList(_context.Directory, "DirectoryID", "First_Name");
             ViewData["HymnID"] = new SelectList(_context.Hymn, "HymnID", "HymnID");
-            ViewData["MeetingID"] = new SelectList(_context.Meeting, "MeetingID", "MeetingID");
+            ViewData["MeetingID"] = new SelectList(_context.Meeting, "MeetingID", "MeetingID", AgendaMeetingID);
 
             return View();
         }

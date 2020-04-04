@@ -13,41 +13,42 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="AgendaID" />
-            <div class="form-group">
+            <div class="form-group hide">
                 <label asp-for="MeetingID" class="control-label"></label>
                 <select asp-for="MeetingID" class="form-control" asp-items="ViewBag.MeetingID"></select>
                 <span asp-validation-for="MeetingID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Section" class="control-label"></label>
-                <select asp-for="Section" class="form-control"></select>
+                <select asp-for="Section" class="form-control" id="sectionDropdown" asp-items="Html.GetEnumSelectList<Category>()"></select>
                 <span asp-validation-for="Section" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="MemberID-div">
                 <label asp-for="MemberID" class="control-label"></label>
                 <select asp-for="MemberID" class="form-control" asp-items="ViewBag.MemberID"></select>
                 <span asp-validation-for="MemberID" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group hide" id="HymnID-div">
                 <label asp-for="HymnID" class="control-label"></label>
                 <select asp-for="HymnID" class="form-control" asp-items="ViewBag.HymnID"></select>
                 <span asp-validation-for="HymnID" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group hide" id="Special_Event-div">
                 <label asp-for="Special_Event_Text" class="control-label"></label>
                 <input asp-for="Special_Event_Text" class="form-control" />
                 <span asp-validation-for="Special_Event_Text" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Notes" class="control-label"></label>
-                <input asp-for="Notes" class="form-control" />
-                <span asp-validation-for="Notes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            <div class="form-group" id="Subject-div">
                 <label asp-for="Subject" class="control-label"></label>
                 <input asp-for="Subject" class="form-control" />
                 <span asp-validation-for="Subject" class="text-danger"></span>
             </div>
+            <div class="form-group" id="Notes-div">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -62,3 +63,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+<script src="~/js/agendaItems.js"></script>
