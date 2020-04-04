@@ -18,6 +18,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Ward)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ward.Stake)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +31,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Ward.Ward_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ward.Stake)
             </td>
             <td>
                 <a asp-action="Agenda" asp-route-id="@item.MeetingID">View Agenda Items</a> |
